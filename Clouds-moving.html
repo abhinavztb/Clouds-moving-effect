@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>CLOUDS-moving</title>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="Clouds.css">
+</head>
+
+<body bgcolor="black">
+
+          <img src="cloud1.png" class="cloud cloud1 floating1">
+		  <img src="cloud2.png" class="cloud cloud2 floating">
+		  <center>
+		  <div class="updown"> 
+		  <div id="hi">
+		  LOGO 
+		 </div> </div>
+		  <!--<img src="logo.png" width="500px" height="100px" class="updown"> <img src="DP.png" width="100px height="110px" class="updown"--> 
+		  </center>
+		  <img src="cloud3.png" class="cloud cloud3 floating_1">
+		 <img src="cloud1.png" class="cloud cloud4 floating1">
+		
+	<script src="https://github.com/bijection/smoke.js/blob/master/smoke.js"></script>
+<script>
+	var canvas = document.getElementById('canvas')
+	var ctx = canvas.getContext('2d')
+	canvas.width = innerWidth
+	canvas.height = innerHeight
+
+	var party = smokemachine(ctx, [192,192,192])
+	party.start() // start animating
+
+	onmousemove = function (e) {
+		var x = e.clientX
+		var y = e.clientY
+		var n = .5
+		var t = Math.floor(Math.random() * 200) + 3800
+		party.addsmoke(x, y, n, t)
+	}
+
+	setInterval(function(){
+		party.addsmoke(innerWidth/2, innerHeight, 1)
+	}, 100)
+
+</script>
+
+
+
+</body>
+</html>
